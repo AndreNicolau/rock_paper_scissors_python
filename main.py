@@ -4,18 +4,21 @@ __LIST__ = ['ROCK', 'PAPER', 'SCISSORS']
 comp_play = usr_play = ''
 
 
+# function to get and return computer play
 def computer_play():
     global comp_play
     comp_play = random.choice(__LIST__)
     return comp_play
 
 
+# function to get and return user play
 def user_play():
     global usr_play
     usr_play = input('Your turn: ').upper()
     return usr_play
 
 
+# function to check who wins
 def check_winner():
     if comp_play == 'ROCK' and usr_play == 'PAPER':
         print('User wins!')
