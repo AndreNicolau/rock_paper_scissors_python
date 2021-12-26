@@ -1,5 +1,7 @@
 {
-    "Winner": "User",
-    "Computer played: ": "SCISSORS",
-    "Player played": "ROCK"
+    "last_play": {
+        "winner": "None",
+        "computer_played: ": "ROCK",
+        "player_played": "ROCK"
+    }
 }

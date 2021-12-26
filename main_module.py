@@ -6,6 +6,7 @@ __LIST__ = ['ROCK', 'PAPER', 'SCISSORS']  # list of playable options
 comp_play = usr_play = winner = ''  # variables to computer and user playable options
 comp_score = usr_score = 0
 
+
 # define global variable for computer play
 # get and return random choice from __LIST__
 def computer_play():
@@ -67,24 +68,16 @@ def print_game():
 
 def store_data():
     dictionary = {
-        "Last play":{
-            "Winner": f"{winner}",
-            "Computer played: ": f"{comp_play}",
-            "Player played": f"{usr_play}"
-        },
-
-        "Computer":{
-            "Total score: " 
-        },
-
-        "User":{
-            "Total score:"
+        "last_play": {
+            "winner": f"{winner}",
+            "computer_played: ": f"{comp_play}",
+            "player_played": f"{usr_play}"
         }
     }
 
-    with open('data.json', 'w') as write_file:
+    with open('/data.json', "w") as write_file:
         json.dump(dictionary, write_file, indent=4)
-        
+
 
 def main():
     computer_play()
