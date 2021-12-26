@@ -1,25 +1,27 @@
 import random
 import os
 
-__LIST__ = ['ROCK', 'PAPER', 'SCISSORS']
-comp_play = usr_play = ''
+__LIST__ = ['ROCK', 'PAPER', 'SCISSORS'] # list of playable options
+comp_play = usr_play = '' # variables to computer and user playable options
 
 
-# function to get and return computer play
+# define global variable for computer play
+# get and return random choice from __LIST__
 def computer_play():
     global comp_play
     comp_play = random.choice(__LIST__)
     return comp_play
 
 
-# function to get and return user play
+# define global variable for user play
+# get and return user play variable
 def user_play():
     global usr_play
     usr_play = input('Your turn: ').upper()
     return usr_play
 
 
-# function to check who wins
+# check who wins
 def check_winner():
     if comp_play == 'ROCK' and usr_play == 'PAPER':
         print('User wins!')
@@ -36,9 +38,11 @@ def check_winner():
     elif comp_play == usr_play:
         print('It`s a tie!')
 
-
+# print what computer played
+# print what player played
 def print_game():
-    print(f'\nComputer played: {comp_play}\nUser played: {usr_play}')
+    print(f'\nComputer played: {comp_play}')
+    print(f'User played: {usr_play}')
 
 
 def main():
