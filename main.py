@@ -1,4 +1,5 @@
 import random
+import os
 
 __LIST__ = ['ROCK', 'PAPER', 'SCISSORS']
 comp_play = usr_play = ''
@@ -33,7 +34,7 @@ def check_winner():
     if comp_play == 'SCISSORS' and usr_play == 'PAPER':
         print('Computer wins!')
     elif comp_play == usr_play:
-        print('It´s a tie!')
+        print('It`s a tie!')
 
 
 def print_game():
@@ -48,4 +49,5 @@ def main():
 
 
 if __name__ == '__main__':
+    os.system('cls') # clear terminal
     main()
