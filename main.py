@@ -1,8 +1,8 @@
 import random
 import os
 
-__LIST__ = ['ROCK', 'PAPER', 'SCISSORS'] # list of playable options
-comp_play = usr_play = '' # variables to computer and user playable options
+__LIST__ = ['ROCK', 'PAPER', 'SCISSORS']  # list of playable options
+comp_play = usr_play = ''  # variables to computer and user playable options
 
 
 # define global variable for computer play
@@ -38,6 +38,7 @@ def check_winner():
     elif comp_play == usr_play:
         print('It`s a tie!')
 
+
 # print what computer played
 # print what player played
 def print_game():
@@ -53,5 +54,5 @@ def main():
 
 
 if __name__ == '__main__':
-    os.system('cls') # clear terminal
+    os.system('cls')  # clear terminal
     main()
