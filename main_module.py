@@ -4,7 +4,7 @@ import json
 
 __LIST__ = ['ROCK', 'PAPER', 'SCISSORS']  # list of playable options
 comp_play = usr_play = winner = ''  # variables to computer and user playable options
-
+comp_score = usr_score = 0
 
 # define global variable for computer play
 # get and return random choice from __LIST__
@@ -24,29 +24,36 @@ def user_play():
 
 # check who wins
 def check_winner():
-    global winner
+    global winner, comp_score, usr_score
     if comp_play == 'ROCK' and usr_play == 'PAPER':
         print('User wins!')
         winner = 'User'
+        usr_score += 1
     if comp_play == 'ROCK' and usr_play == 'SCISSORS':
         print('Computer wins!')
         winner = 'Computer'
+        comp_score += 1
     if comp_play == 'PAPER' and usr_play == 'SCISSORS':
         print('User wins!')
         winner = 'User'
+        usr_score += 1
     if comp_play == 'PAPER' and usr_play == 'ROCK':
         print('Computer wins!')
         winner = 'Computer'
+        comp_score += 1
     if comp_play == 'SCISSORS' and usr_play == 'ROCK':
         print('User wins!')
         winner = 'User'
+        usr_score += 1
     if comp_play == 'SCISSORS' and usr_play == 'PAPER':
         print('Computer wins!')
         winner = 'Computer'
+        comp_score += 1
     elif comp_play == usr_play:
         print('It`s a tie!')
         winner = 'None'
-    return winner
+        comp_score = usr_score = 0
+    return winner, comp_score, usr_score
 
 
 # print what computer played
@@ -57,11 +64,22 @@ def print_game():
     print(f'User played: {usr_play}')
     return comp_play, usr_play
 
+
 def store_data():
     dictionary = {
-        "Winner": f"{winner}",
-        "Computer played: ": f"{comp_play}",
-        "Player played": f"{usr_play}"
+        "Last play":{
+            "Winner": f"{winner}",
+            "Computer played: ": f"{comp_play}",
+            "Player played": f"{usr_play}"
+        },
+
+        "Computer":{
+            "Total score: " 
+        },
+
+        "User":{
+            "Total score:"
+        }
     }
 
     with open('data.json', 'w') as write_file:
