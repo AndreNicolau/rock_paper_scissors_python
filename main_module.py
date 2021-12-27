@@ -67,7 +67,8 @@ def print_game():
 
 
 def store_data():
-    dictionary = {
+    global dict_last_play, dict_winner
+    dict_last_play = {
         "last_play": {
             "winner": f"{winner}",
             "computer_played: ": f"{comp_play}",
@@ -75,8 +76,31 @@ def store_data():
         }
     }
 
+    dict_winner = {
+        "computer": {
+            "total_score": ""
+        },
+
+        "user": {
+            "total_score": ""
+        },
+
+        "ties": {
+            "total_ties": ""
+        }
+    }
+
+    if winner == "Computer":
+        dict_winner["computer"["total_score": ""]] += 1
+    if winner == "User":
+        dict_winner["user"["total_score": ""]] += 1
+    if winner == "None":
+        dict_winner["ties"["total_ties": ""]] += 1
+
     with open('/data.json', "w") as write_file:
-        json.dump(dictionary, write_file, indent=4)
+        json.dump((dict_last_play, dict_winner), write_file, indent=4)
+
+    return dict_last_play, dict_winner
 
 
 def main():
