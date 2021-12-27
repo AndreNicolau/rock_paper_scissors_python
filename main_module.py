@@ -5,6 +5,7 @@ import json
 __LIST__ = ['ROCK', 'PAPER', 'SCISSORS']  # list of playable options
 comp_play = usr_play = winner = ''  # variables to computer and user playable options
 comp_score = usr_score = 0
+dict_winner = dict_last_play = {}
 
 
 # define global variable for computer play
